@@ -11,8 +11,15 @@ pipeline {
 
             }
         }
+        stage('test jenkinsfile') {
+            steps {
+                sh 'echo "in the jenkingsfile"'
+
+            }
+        }
         stage('Buid and push to hub') {
             steps {
+
                 script {
                     withDockerRegistry(
                         credentialsId: 'c0acf894-d8a4-11ea-94f3-74e5f9e5188e',
